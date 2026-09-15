@@ -1,0 +1,5 @@
+opencv-python
+numpy
+matplotlib
+streamlit>=1.50,<2
+streamlit-image-coordinates>=0.4.1,<0.5

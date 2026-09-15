@@ -1,0 +1,103 @@
+{
+  "id": "book_01",
+  "image": "reference_images/book_01_reference.jpeg",
+  "timestamp_utc": "2026-09-15T02:27:12.815953+00:00",
+  "image_width": 3024,
+  "image_height": 4032,
+  "corner_order": [
+    "top-left",
+    "top-right",
+    "bottom-right",
+    "bottom-left"
+  ],
+  "plate_width_cm": 30.48,
+  "plate_height_cm": 15.24,
+  "plate_corners_px": [
+    [
+      1559.7996950776828,
+      733.9480906054882
+    ],
+    [
+      2811.200885726732,
+      733.9480906054882
+    ],
+    [
+      2837.5461739509224,
+      3315.7863365761577
+    ],
+    [
+      1551.017932336286,
+      3320.177217946856
+    ]
+  ],
+  "book_corners_px": [
+    [
+      286.4440975751418,
+      1076.4368375199647
+    ],
+    [
+      1537.8452882241909,
+      1072.0459561492662
+    ],
+    [
+      1529.063525482794,
+      3047.942572963554
+    ],
+    [
+      264.48969072164977,
+      3025.9881661100626
+    ]
+  ],
+  "homography_pixels_to_cm": [
+    [
+      0.012230573351306211,
+      4.152984479294626e-05,
+      -19.1077251831082
+    ],
+    [
+      -4.2754881398743984e-19,
+      0.012188831041874858,
+      -8.945969629610072
+    ],
+    [
+      -1.327532804687028e-06,
+      1.0927671810086933e-05,
+      1.0
+    ]
+  ],
+  "width_cm": 15.056255057836275,
+  "height_cm": 23.09652526274089,
+  "edge_lengths_cm": {
+    "top": 15.132562493639366,
+    "right": 23.26794992707235,
+    "bottom": 14.979947622033183,
+    "left": 22.925100598409433
+  },
+  "book_corners_cm": [
+    [
+      -15.384528151005211,
+      4.127554459798376
+    ],
+    [
+      -0.2520356322370082,
+      4.08153497126079
+    ],
+    [
+      -0.2713344568209171,
+      27.34947689494875
+    ],
+    [
+      -15.248333062233536,
+      27.052250495841843
+    ]
+  ],
+  "method": "coplanar reference rectangle homography",
+  "annotated_image": "/Users/jimmyli/Desktop/CV_Module2/results/ground_truth/annotated/book_01.png",
+  "plate_orientation": "portrait",
+  "plate_orientation_requested": "auto",
+  "plate_plane_width_cm": 15.24,
+  "plate_plane_height_cm": 30.48,
+  "correction_note": "Corrected portrait plate mapping using the existing clicked corners; no new clicks.",
+  "previous_width_cm": 30.10967982817015,
+  "previous_height_cm": 11.549809538727354
+}

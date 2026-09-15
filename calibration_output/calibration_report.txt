@@ -1,0 +1,175 @@
+CAMERA CALIBRATION REPORT
+Checkerboard squares: 8 x 8
+Checkerboard internal corners (columns, rows): (7, 7)
+Square size: 20.06 mm; world-coordinate unit: millimeters
+Board filled the short screen width of a vertical iPad.
+Capture assumption: same rear camera, lens, orientation, resolution, zoom.
+Pixel convention: direct IMREAD_GRAYSCALE with default EXIF orientation handling.
+OpenCV version: 4.11.0
+Input directory: /Users/jimmyli/Desktop/CV_Module2/calibration_images
+Input image count: 12
+
+Detection attempts for 'IMG_9050.jpeg':
+  original / SB: raw_result=True, corner_count=49
+  original / SB: DETECTED; 49 corners
+  DETECTED: 49 corners using original / SB
+
+Detection attempts for 'IMG_9051.jpeg':
+  original / SB: raw_result=True, corner_count=49
+  original / SB: DETECTED; 49 corners
+  DETECTED: 49 corners using original / SB
+
+Detection attempts for 'IMG_9052.jpeg':
+  original / SB: raw_result=False, corner_count=0
+  original / SB: not detected; 0 corners
+  original / classic: raw_result=False, corner_count=0
+  original / classic: not detected; 0 corners
+  CLAHE / SB: raw_result=False, corner_count=0
+  CLAHE / SB: not detected; 0 corners
+  CLAHE / classic: raw_result=False, corner_count=0
+  CLAHE / classic: not detected; 0 corners
+  half / SB: raw_result=True, corner_count=49
+  half / SB: DETECTED; 49 corners
+  DETECTED: 49 corners using half / SB
+
+Detection attempts for 'IMG_9053.jpeg':
+  original / SB: raw_result=True, corner_count=49
+  original / SB: DETECTED; 49 corners
+  DETECTED: 49 corners using original / SB
+
+Detection attempts for 'IMG_9054.jpeg':
+  original / SB: raw_result=False, corner_count=0
+  original / SB: not detected; 0 corners
+  original / classic: raw_result=False, corner_count=0
+  original / classic: not detected; 0 corners
+  CLAHE / SB: raw_result=False, corner_count=0
+  CLAHE / SB: not detected; 0 corners
+  CLAHE / classic: raw_result=False, corner_count=0
+  CLAHE / classic: not detected; 0 corners
+  half / SB: raw_result=True, corner_count=49
+  half / SB: DETECTED; 49 corners
+  DETECTED: 49 corners using half / SB
+
+Detection attempts for 'IMG_9055.jpeg':
+  original / SB: raw_result=True, corner_count=49
+  original / SB: DETECTED; 49 corners
+  DETECTED: 49 corners using original / SB
+
+Detection attempts for 'IMG_9057.jpeg':
+  original / SB: raw_result=False, corner_count=0
+  original / SB: not detected; 0 corners
+  original / classic: raw_result=False, corner_count=0
+  original / classic: not detected; 0 corners
+  CLAHE / SB: raw_result=False, corner_count=0
+  CLAHE / SB: not detected; 0 corners
+  CLAHE / classic: raw_result=False, corner_count=0
+  CLAHE / classic: not detected; 0 corners
+  half / SB: raw_result=False, corner_count=0
+  half / SB: not detected; 0 corners
+  half / classic: raw_result=False, corner_count=0
+  half / classic: not detected; 0 corners
+
+Detection attempts for 'IMG_9058.jpeg':
+  original / SB: raw_result=True, corner_count=49
+  original / SB: DETECTED; 49 corners
+  DETECTED: 49 corners using original / SB
+
+Detection attempts for 'IMG_9059.jpeg':
+  original / SB: raw_result=False, corner_count=0
+  original / SB: not detected; 0 corners
+  original / classic: raw_result=False, corner_count=0
+  original / classic: not detected; 0 corners
+  CLAHE / SB: raw_result=False, corner_count=0
+  CLAHE / SB: not detected; 0 corners
+  CLAHE / classic: raw_result=False, corner_count=0
+  CLAHE / classic: not detected; 0 corners
+  half / SB: raw_result=True, corner_count=49
+  half / SB: DETECTED; 49 corners
+  DETECTED: 49 corners using half / SB
+
+Detection attempts for 'IMG_9060.jpeg':
+  original / SB: raw_result=True, corner_count=49
+  original / SB: DETECTED; 49 corners
+  DETECTED: 49 corners using original / SB
+
+Detection attempts for 'IMG_9062.jpeg':
+  original / SB: raw_result=False, corner_count=0
+  original / SB: not detected; 0 corners
+  original / classic: raw_result=False, corner_count=0
+  original / classic: not detected; 0 corners
+  CLAHE / SB: raw_result=False, corner_count=0
+  CLAHE / SB: not detected; 0 corners
+  CLAHE / classic: raw_result=False, corner_count=0
+  CLAHE / classic: not detected; 0 corners
+  half / SB: raw_result=True, corner_count=49
+  half / SB: DETECTED; 49 corners
+  DETECTED: 49 corners using half / SB
+
+Detection attempts for 'IMG_9063.jpeg':
+  original / SB: raw_result=False, corner_count=0
+  original / SB: not detected; 0 corners
+  original / classic: raw_result=False, corner_count=0
+  original / classic: not detected; 0 corners
+  CLAHE / SB: raw_result=False, corner_count=0
+  CLAHE / SB: not detected; 0 corners
+  CLAHE / classic: raw_result=False, corner_count=0
+  CLAHE / classic: not detected; 0 corners
+  half / SB: raw_result=False, corner_count=0
+  half / SB: not detected; 0 corners
+  half / classic: raw_result=False, corner_count=0
+  half / classic: not detected; 0 corners
+
+Accepted images: 10
+  'IMG_9050.jpeg': 3024 x 4032 pixels; original / SB
+  'IMG_9051.jpeg': 3024 x 4032 pixels; original / SB
+  'IMG_9052.jpeg': 3024 x 4032 pixels; half / SB
+  'IMG_9053.jpeg': 3024 x 4032 pixels; original / SB
+  'IMG_9054.jpeg': 3024 x 4032 pixels; half / SB
+  'IMG_9055.jpeg': 3024 x 4032 pixels; original / SB
+  'IMG_9058.jpeg': 3024 x 4032 pixels; original / SB
+  'IMG_9059.jpeg': 3024 x 4032 pixels; half / SB
+  'IMG_9060.jpeg': 3024 x 4032 pixels; original / SB
+  'IMG_9062.jpeg': 3024 x 4032 pixels; half / SB
+
+Rejected images: 2
+  'IMG_9057.jpeg': complete 7 x 7 internal-corner grid not detected
+  'IMG_9063.jpeg': complete 7 x 7 internal-corner grid not detected
+
+Image resolution (width x height): 3024 x 4032 pixels
+
+Camera matrix (pixel coordinates):
+[[3.0055340264e+03 0.0000000000e+00 1.4460303520e+03]
+ [0.0000000000e+00 3.0575024988e+03 1.8827812372e+03]
+ [0.0000000000e+00 0.0000000000e+00 1.0000000000e+00]]
+Distortion coefficients (k1, k2, p1, p2, k3; dimensionless):
+[ 0.4624594526 -2.0402660189 -0.0319910447 -0.016239287   5.0133227001]
+OpenCV calibrateCamera RMS: 3.65722839 pixels
+Overall RMS reprojection error (projectPoints): 3.65722837 pixels
+RMS definition: sqrt(sum of squared 2D corner distances / total corners).
+
+Per-image errors (pixels):
+Mean error = arithmetic mean of Euclidean 2D corner distances.
+  'IMG_9050.jpeg': mean=5.20540418, RMS=7.28135685
+  'IMG_9051.jpeg': mean=1.78959538, RMS=2.07168364
+  'IMG_9052.jpeg': mean=3.35544874, RMS=3.82074712
+  'IMG_9053.jpeg': mean=1.47957131, RMS=1.69537712
+  'IMG_9054.jpeg': mean=2.98979716, RMS=3.54390973
+  'IMG_9055.jpeg': mean=1.62749024, RMS=2.17244744
+  'IMG_9058.jpeg': mean=2.16889590, RMS=2.51601890
+  'IMG_9059.jpeg': mean=3.86395418, RMS=4.53688622
+  'IMG_9060.jpeg': mean=2.06509280, RMS=2.37111536
+  'IMG_9062.jpeg': mean=2.48411492, RMS=3.02589673
+
+Poses: board-to-camera Rodrigues rotations (radians), translations (mm).
+  'IMG_9050.jpeg': rvec=[0.0429827199201057, 0.07430327979576162, 0.009819858113519436], tvec_mm=[-37.74035840292094, -46.48600560007445, 380.9618245771259]
+  'IMG_9051.jpeg': rvec=[0.09983419796249118, 0.05441598256568647, 0.0013481083706049157], tvec_mm=[-29.25023786101724, -36.71324941036427, 713.5042447977874]
+  'IMG_9052.jpeg': rvec=[0.14534451688216765, -0.4427166131493057, -0.015579753931464475], tvec_mm=[-37.9117577000869, -44.8315409147984, 303.7253523571968]
+  'IMG_9053.jpeg': rvec=[0.11597764847263903, -0.48226328637055205, 0.002647591511420172], tvec_mm=[-49.82900454257726, 8.438706883930513, 745.6355480150195]
+  'IMG_9054.jpeg': rvec=[0.1204899614115799, 0.6286605743954246, 0.035064528760586224], tvec_mm=[-57.65954338920728, -52.3823849829504, 378.243942236356]
+  'IMG_9055.jpeg': rvec=[0.1546234221553675, 0.6468789027846377, 0.016703004553708392], tvec_mm=[-33.78132307677572, -32.845430032038344, 757.7398838481326]
+  'IMG_9058.jpeg': rvec=[0.6617411077927571, 0.11452570427529964, -0.02544746403143731], tvec_mm=[-46.02377690384657, -31.997022512499917, 531.3420093740691]
+  'IMG_9059.jpeg': rvec=[-0.5058929847006671, 0.12160661280693508, -0.022911557250953566], tvec_mm=[-48.77788789118346, -12.18946246355173, 325.7906664171667]
+  'IMG_9060.jpeg': rvec=[-0.382086251235265, 0.14261189757495335, 0.0046616519144500965], tvec_mm=[-36.967143997401514, 32.79671340696724, 649.1356077954258]
+  'IMG_9062.jpeg': rvec=[-0.41985038197041163, 0.7066840700755266, -0.13541205381141275], tvec_mm=[-61.706172315385544, 11.80589992025526, 468.42387083657917]
+
+Status: SUCCESS

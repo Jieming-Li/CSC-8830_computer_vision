@@ -1,0 +1,151 @@
+CONSTRAINED MODEL COMPARISON: FIX K3
+OpenCV: 4.11.0
+Source: calibration_before_subset_selection.npz (all 10 saved accepted views).
+Source SHA-256: f999defd085f067a5dfc2fccc848556b5ef14bfdae32ec3afca7e5cde6f4e154
+Only saved corner/world-coordinate arrays were used. Images were not opened.
+No detection, refinement, image edits, or new view selection performed.
+Board: (7, 7) internal corners; square side 20.06 mm; world units mm.
+Resolution: 3024 x 4032 pixels.
+Model: cv2.calibrateCamera(..., None, None, flags=cv2.CALIB_FIX_K3).
+No intrinsic guess; default solver criteria, matching earlier comparisons.
+Estimated: fx, fy, cx, cy, k1, k2, p1, p2. k3 fixed to zero.
+Overall RMS: sqrt(sum of squared 2D projectPoints residuals / total corners).
+The RMS measures fit to each subset, not independent validation accuracy.
+Original detection rejections (not selection exclusions):
+  IMG_9057.jpeg
+  IMG_9063.jpeg
+The current calibration.npz is unchanged and is NOT newly endorsed as final.
+Its exact bytes are preserved in calibration_C_default_model.npz.
+
+========================================================================
+SUBSET A (10 images)
+Included filenames:
+  IMG_9050.jpeg
+  IMG_9051.jpeg
+  IMG_9052.jpeg
+  IMG_9053.jpeg
+  IMG_9054.jpeg
+  IMG_9055.jpeg
+  IMG_9058.jpeg
+  IMG_9059.jpeg
+  IMG_9060.jpeg
+  IMG_9062.jpeg
+Excluded from original accepted set:
+  (none)
+Overall RMS reprojection error: 3.6631940180 pixels
+OpenCV solver RMS: 3.6631950486 pixels
+Camera matrix:
+[[3.022640654363e+03 0.000000000000e+00 1.433560598283e+03]
+ [0.000000000000e+00 3.071966231774e+03 1.890112102715e+03]
+ [0.000000000000e+00 0.000000000000e+00 1.000000000000e+00]]
+Distortion coefficients [k1, k2, p1, p2, k3]:
+[ 0.363648168149 -0.632833982636 -0.030501771206 -0.018116662434
+  0.            ]
+Per-image RMS (pixels):
+  IMG_9050.jpeg: 7.2589587359
+  IMG_9051.jpeg: 2.0819105188
+  IMG_9052.jpeg: 3.8403436406
+  IMG_9053.jpeg: 1.6901113686
+  IMG_9054.jpeg: 3.5568267089
+  IMG_9055.jpeg: 2.1805511559
+  IMG_9058.jpeg: 2.5445979246
+  IMG_9059.jpeg: 4.5846037180
+  IMG_9060.jpeg: 2.3693857714
+  IMG_9062.jpeg: 3.0074867774
+Saved candidate: calibration_A_fix_k3.npz
+
+========================================================================
+SUBSET B (9 images)
+Included filenames:
+  IMG_9051.jpeg
+  IMG_9052.jpeg
+  IMG_9053.jpeg
+  IMG_9054.jpeg
+  IMG_9055.jpeg
+  IMG_9058.jpeg
+  IMG_9059.jpeg
+  IMG_9060.jpeg
+  IMG_9062.jpeg
+Excluded from original accepted set:
+  IMG_9050.jpeg
+Overall RMS reprojection error: 2.9875378006 pixels
+OpenCV solver RMS: 2.9875396295 pixels
+Camera matrix:
+[[3.023701008371e+03 0.000000000000e+00 1.491144519639e+03]
+ [0.000000000000e+00 3.064832488425e+03 1.923972520506e+03]
+ [0.000000000000e+00 0.000000000000e+00 1.000000000000e+00]]
+Distortion coefficients [k1, k2, p1, p2, k3]:
+[ 0.383218975705 -0.879494682098 -0.021663027096 -0.007176077978
+  0.            ]
+Per-image RMS (pixels):
+  IMG_9051.jpeg: 2.1058400381
+  IMG_9052.jpeg: 3.7901676605
+  IMG_9053.jpeg: 1.6985766182
+  IMG_9054.jpeg: 3.5177131066
+  IMG_9055.jpeg: 2.1819878265
+  IMG_9058.jpeg: 2.5281924623
+  IMG_9059.jpeg: 4.5125477370
+  IMG_9060.jpeg: 2.3826700712
+  IMG_9062.jpeg: 3.0126410425
+Saved candidate: calibration_B_fix_k3.npz
+
+========================================================================
+SUBSET C (8 images)
+Included filenames:
+  IMG_9051.jpeg
+  IMG_9052.jpeg
+  IMG_9053.jpeg
+  IMG_9054.jpeg
+  IMG_9055.jpeg
+  IMG_9058.jpeg
+  IMG_9060.jpeg
+  IMG_9062.jpeg
+Excluded from original accepted set:
+  IMG_9050.jpeg
+  IMG_9059.jpeg
+Overall RMS reprojection error: 2.7118557949 pixels
+OpenCV solver RMS: 2.7118509613 pixels
+Camera matrix:
+[[3.033261659362e+03 0.000000000000e+00 1.487118896289e+03]
+ [0.000000000000e+00 3.069660244158e+03 1.998563519443e+03]
+ [0.000000000000e+00 0.000000000000e+00 1.000000000000e+00]]
+Distortion coefficients [k1, k2, p1, p2, k3]:
+[ 0.475029287358 -2.8721539967   -0.004427371991 -0.006181365275
+  0.            ]
+Per-image RMS (pixels):
+  IMG_9051.jpeg: 2.0956448835
+  IMG_9052.jpeg: 3.7855221885
+  IMG_9053.jpeg: 1.6934681295
+  IMG_9054.jpeg: 3.4685342252
+  IMG_9055.jpeg: 2.1710688737
+  IMG_9058.jpeg: 2.5144180377
+  IMG_9060.jpeg: 2.4039535390
+  IMG_9062.jpeg: 2.8979293270
+Saved candidate: calibration_C_fix_k3.npz
+
+========================================================================
+RECOMMENDATION: SUBSET B WITH FIX_K3 (candidate only; not installed as final)
+
+B retains 9 images and reduces RMS from A's 3.663194 to 2.987538 px
+(18.44% reduction). Its k1 changes from 0.363648 to
+0.383219, and k2 from -0.632834 to -0.879495.
+
+Removing IMG_9059.jpeg as well (C) improves RMS by another
+0.275682 px (9.23%), but k2 changes to -2.872154
+(3.27 times B's magnitude), k1 rises to 0.475029, and cy shifts
+from 1923.972521 to 1998.563519 pixels. Thus C remains more sensitive to
+which views are retained, even after fixing k3. B balances lower RMS than A
+with less coefficient movement than C and one additional calibration view.
+
+This is a qualitative sensitivity comparison across exactly A, B, and C.
+Coefficient magnitude alone is not proof of validity or instability, and no
+bootstrap uncertainty or independent validation was measured. Fixing k3
+reduces model flexibility; it does not establish measurement accuracy.
+All candidates retain the previously verified left/right/above/below views:
+IMG_9053.jpeg / IMG_9055.jpeg / IMG_9058.jpeg / IMG_9060.jpeg, respectively.
+These are prior viewpoint checks; no images were opened during this task.
+
+calibration.npz was NOT overwritten. Its current default-model subset-C
+content was copied byte-for-byte to calibration_C_default_model.npz.
+All candidate corner arrays exactly match their corresponding saved source
+arrays. Detection was never invoked, and image files were not read or changed.

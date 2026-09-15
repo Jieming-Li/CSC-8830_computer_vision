@@ -1,0 +1,57 @@
+BOOK MEASUREMENT EVALUATION
+========================================================================
+Trials evaluated: 20 of 20; none excluded.
+Books: 5
+Distances (m): 2.134, 2.591, 3.048, 3.658
+Trial source: /Users/jimmyli/Desktop/CV_Module2/results/measurements.csv
+Each CSV record was checked against its measurement JSON.
+Ground truth: /Users/jimmyli/Desktop/CV_Module2/results/ground_truth/*.json (saved reference estimates).
+Inputs are read-only. No image analysis, recalibration, or measurement changes.
+
+Book-ID joins:
+  book_05 -> book_5 (/Users/jimmyli/Desktop/CV_Module2/results/ground_truth/book_5.json); zero-padding only.
+
+METRIC DEFINITIONS
+Signed error e = predicted - true; positive = overestimate, negative = underestimate.
+Mean signed error: mean(e), describing average bias (cm).
+MAE: mean(abs(e)), the typical absolute deviation (cm).
+RMSE: sqrt(mean(e^2)); larger errors receive more weight (cm).
+Signed percentage error: 100*e/true; absolute percentage error: 100*abs(e)/true.
+MAPE: mean(100*abs(e)/true), giving equal weight to each trial (%).
+Sample SD: sqrt(sum((e-mean(e))^2)/(n-1)), spread around the bias (cm).
+Maximum absolute error: max(abs(e)) (cm).
+
+WIDTH METRICS
+Metric                                            Value  Unit
+----------------------------------------------------------------
+Mean signed error                             -1.049776  cm
+Mean absolute error (MAE)                      1.049776  cm
+Root mean squared error (RMSE)                 1.122053  cm
+Mean absolute percentage error (MAPE)          7.286446  %
+Sample SD of signed error (n-1)                0.406488  cm
+Maximum absolute error                         1.763278  cm
+
+HEIGHT METRICS
+Metric                                            Value  Unit
+----------------------------------------------------------------
+Mean signed error                             -2.128391  cm
+Mean absolute error (MAE)                      2.128391  cm
+Root mean squared error (RMSE)                 2.178104  cm
+Mean absolute percentage error (MAPE)          9.705967  %
+Sample SD of signed error (n-1)                0.474720  cm
+Maximum absolute error                         3.375868  cm
+
+INTERPRETATION
+Width: underestimation on average (mean signed error -1.049776 cm); 20/20 below ground truth, 0/20 above, 0/20 exact.
+Height: underestimation on average (mean signed error -2.128391 cm); 20/20 below ground truth, 0/20 above, 0/20 exact.
+This describes the completed trials; it does not isolate a cause or establish significance.
+Errors can arise from camera calibration, distance measurement, manual corner selection,
+lens distortion, and imperfect front-facing alignment. Reference dimensions also have
+uncertainty from the plate homography, manual clicks, and any difference in object planes.
+
+OUTPUTS
+final_trial_results.csv: every trial and its signed/absolute/percentage errors.
+evaluation_metrics.json: aggregate metrics and source-file hashes.
+figures/predicted_vs_true_width.png
+figures/predicted_vs_true_height.png
+figures/absolute_error_vs_distance.png

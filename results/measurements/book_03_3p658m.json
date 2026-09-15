@@ -1,0 +1,80 @@
+{
+  "id": "book_03",
+  "image": "book_measurement_images/book_03_3p658m.jpeg",
+  "timestamp_utc": "2026-09-15T03:46:16.225006+00:00",
+  "distance_m": 3.658,
+  "distance_definition": "perpendicular optical-center-to-cover depth Z",
+  "image_width": 3024,
+  "image_height": 4032,
+  "corner_order": [
+    "top-left",
+    "top-right",
+    "bottom-right",
+    "bottom-left"
+  ],
+  "corners_px": [
+    [
+      1436.8550166981272,
+      1954.6131116596484
+    ],
+    [
+      1551.017932336286,
+      1941.440467547553
+    ],
+    [
+      1555.4088137069843,
+      2117.07572237549
+    ],
+    [
+      1436.8550166981272,
+      2117.07572237549
+    ]
+  ],
+  "width_cm": 14.13092624542303,
+  "height_cm": 20.23660701865216,
+  "edge_lengths_cm": {
+    "top": 13.903024124044517,
+    "right": 21.03241455779126,
+    "bottom": 14.358828366801545,
+    "left": 19.44079947951306
+  },
+  "normalized_corners": [
+    [
+      -0.017951876688925037,
+      0.010006769184466104
+    ],
+    [
+      0.019811728242421323,
+      0.005710795249747625
+    ],
+    [
+      0.021314353107576848,
+      0.0631881898201637
+    ],
+    [
+      -0.01793885223350948,
+      0.063152747576252
+    ]
+  ],
+  "planar_corners_cm": [
+    [
+      -6.566796492808778,
+      3.660476167677701
+    ],
+    [
+      7.24713019107772,
+      2.089008902357681
+    ],
+    [
+      7.79679036675161,
+      23.114239836215884
+    ],
+    [
+      -6.562032147017768,
+      23.101275063392983
+    ]
+  ],
+  "calibration_file": "/Users/jimmyli/Desktop/CV_Module2/calibration_output/calibration.npz",
+  "calibration_sha256": "b49b50fac7b0472c3840871f0f444f6f125817177d31614ccefad9324bca9281",
+  "annotated_image": "/Users/jimmyli/Desktop/CV_Module2/results/measurements/annotated/book_03_3p658m.png"
+}

@@ -1,0 +1,101 @@
+THREE-SUBSET CALIBRATION COMPARISON
+Data source: existing calibration.npz; saved detections reused verbatim.
+Source SHA-256: f999defd085f067a5dfc2fccc848556b5ef14bfdae32ec3afca7e5cde6f4e154
+OpenCV version: 4.11.0
+No checkerboard detection, corner refinement, or image modification performed.
+Board: 8 x 8 squares; internal corners: (7, 7); square side: 20.06 mm.
+Image resolution: 3024 x 4032 pixels.
+Same model for each subset: calibrateCamera with flags=0, default criteria,
+no initial intrinsics, and five distortion coefficients (k1, k2, p1, p2, k3).
+RMS = sqrt(sum of squared Euclidean pixel residuals / number of corners).
+Residuals calculated with cv2.projectPoints using each subset's fitted poses.
+Viewpoint coverage verified by visual inspection of the existing photos:
+  left: IMG_9053.jpeg
+  right: IMG_9055.jpeg
+  above: IMG_9058.jpeg
+  below: IMG_9060.jpeg
+These four images are included in A, B, and C.
+Only the three requested subsets were evaluated. No further pruning.
+
+========================================================================
+SUBSET A: 10 images
+Excluded from original accepted set: (none)
+Included filenames and per-image RMS reprojection errors (pixels):
+  IMG_9050.jpeg: 7.2813568474
+  IMG_9051.jpeg: 2.0716836434
+  IMG_9052.jpeg: 3.8207471225
+  IMG_9053.jpeg: 1.6953771216
+  IMG_9054.jpeg: 3.5439097311
+  IMG_9055.jpeg: 2.1724474355
+  IMG_9058.jpeg: 2.5160188996
+  IMG_9059.jpeg: 4.5368862166
+  IMG_9060.jpeg: 2.3711153575
+  IMG_9062.jpeg: 3.0258967261
+Overall RMS reprojection error: 3.6572283705 pixels
+calibrateCamera returned RMS: 3.6572283861 pixels
+Camera matrix:
+[[3.005534026408e+03 0.000000000000e+00 1.446030351963e+03]
+ [0.000000000000e+00 3.057502498811e+03 1.882781237201e+03]
+ [0.000000000000e+00 0.000000000000e+00 1.000000000000e+00]]
+Distortion coefficients [k1, k2, p1, p2, k3]:
+[ 0.462459452642 -2.040266018868 -0.03199104472  -0.016239286976
+  5.013322700087]
+At least 8 images and left/right/above/below retained: True
+
+========================================================================
+SUBSET B: 9 images
+Excluded from original accepted set: IMG_9050.jpeg
+Included filenames and per-image RMS reprojection errors (pixels):
+  IMG_9051.jpeg: 2.0742642845
+  IMG_9052.jpeg: 3.7701233468
+  IMG_9053.jpeg: 1.7077645816
+  IMG_9054.jpeg: 3.5238465051
+  IMG_9055.jpeg: 2.1744564036
+  IMG_9058.jpeg: 2.4828745138
+  IMG_9059.jpeg: 4.4857843589
+  IMG_9060.jpeg: 2.3884709006
+  IMG_9062.jpeg: 3.0156229394
+Overall RMS reprojection error: 2.9751623523 pixels
+calibrateCamera returned RMS: 2.9751643754 pixels
+Camera matrix:
+[[3.006603637856e+03 0.000000000000e+00 1.497289067124e+03]
+ [0.000000000000e+00 3.049695955756e+03 1.930583781923e+03]
+ [0.000000000000e+00 0.000000000000e+00 1.000000000000e+00]]
+Distortion coefficients [k1, k2, p1, p2, k3]:
+[ 5.139810340770e-01 -3.149418438064e+00 -1.965797843852e-02
+ -6.377222022372e-03  9.283650901106e+00]
+At least 8 images and left/right/above/below retained: True
+
+========================================================================
+SUBSET C: 8 images
+Excluded from original accepted set: IMG_9050.jpeg, IMG_9059.jpeg
+Included filenames and per-image RMS reprojection errors (pixels):
+  IMG_9051.jpeg: 2.0385964464
+  IMG_9052.jpeg: 3.7856824484
+  IMG_9053.jpeg: 1.6861352002
+  IMG_9054.jpeg: 3.4774555838
+  IMG_9055.jpeg: 2.1186138236
+  IMG_9058.jpeg: 2.4147419388
+  IMG_9060.jpeg: 2.3993365854
+  IMG_9062.jpeg: 2.8856086837
+Overall RMS reprojection error: 2.6885421936 pixels
+calibrateCamera returned RMS: 2.6885426621 pixels
+Camera matrix:
+[[3.044794784335e+03 0.000000000000e+00 1.501382400107e+03]
+ [0.000000000000e+00 3.074055205923e+03 2.054454450684e+03]
+ [0.000000000000e+00 0.000000000000e+00 1.000000000000e+00]]
+Distortion coefficients [k1, k2, p1, p2, k3]:
+[ 1.060658049487e+00 -2.011848210380e+01  5.124804550225e-03
+ -2.452083639393e-03  1.402033886488e+02]
+At least 8 images and left/right/above/below retained: True
+
+========================================================================
+SELECTED: SUBSET C
+Reason: lowest overall RMS among eligible subsets (2.6885421936 px).
+Selected image count: 8
+All four verified viewpoints retained.
+Selection uses fit error on retained views; it does not establish accuracy on unseen images.
+Final calibration.npz stores the selected subset and its recalculated poses/errors.
+Source archive retained as calibration_before_subset_selection.npz.
+The earlier calibration_report.txt describes the pre-selection run;
+this comparison is the report for the final selected calibration.

@@ -1,0 +1,37 @@
+Pattern  | Detected | Successful method
+------------------------------------------------------------
+(7, 7)   | YES      | original / SB
+(7, 8)   | NO       | -
+(8, 7)   | NO       | -
+(6, 7)   | YES      | original / SB
+(7, 6)   | YES      | original / SB
+
+Input: /Users/jimmyli/Desktop/CV_Module2/calibration_images/IMG_9050.jpeg
+Known calibration pattern remains (7, 7); square size 20.06 mm.
+
+Candidate (7, 7)
+original / SB: DETECTED; 49 corners
+
+Candidate (7, 8)
+original / SB: not detected; 0 corners
+original / classic: not detected; 0 corners
+CLAHE / SB: not detected; 0 corners
+CLAHE / classic: not detected; 0 corners
+half / SB: not detected; 0 corners
+half / classic: not detected; 0 corners
+complete 7 x 8 internal-corner grid not detected
+
+Candidate (8, 7)
+original / SB: not detected; 0 corners
+original / classic: not detected; 0 corners
+CLAHE / SB: not detected; 0 corners
+CLAHE / classic: not detected; 0 corners
+half / SB: not detected; 0 corners
+half / classic: not detected; 0 corners
+complete 8 x 7 internal-corner grid not detected
+
+Candidate (6, 7)
+original / SB: DETECTED; 42 corners
+
+Candidate (7, 6)
+original / SB: DETECTED; 42 corners

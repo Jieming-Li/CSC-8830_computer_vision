@@ -1,0 +1,66 @@
+{
+  "trial_count": 20,
+  "book_count": 5,
+  "generated_utc": "2026-09-15T03:53:56.488241+00:00",
+  "error_definition": "predicted minus true",
+  "percentage_error_definition": "100 * signed error / true",
+  "mape_definition": "mean(100 * abs(signed error) / true)",
+  "sample_standard_deviation_ddof": 1,
+  "trial_weighting": "equal weight for each of the 20 trials",
+  "width": {
+    "mean_signed_error_cm": -1.049776467317783,
+    "mae_cm": 1.049776467317783,
+    "rmse_cm": 1.1220525196921591,
+    "mape_percent": 7.286446444182998,
+    "sample_std_signed_error_cm": 0.4064884611728249,
+    "max_absolute_error_cm": 1.763277743192404,
+    "underestimated_trials": 20,
+    "overestimated_trials": 0,
+    "exact_trials": 0
+  },
+  "height": {
+    "mean_signed_error_cm": -2.1283905972553954,
+    "mae_cm": 2.1283905972553954,
+    "rmse_cm": 2.17810407283825,
+    "mape_percent": 9.705966906342551,
+    "sample_std_signed_error_cm": 0.4747196597986675,
+    "max_absolute_error_cm": 3.3758681482357034,
+    "underestimated_trials": 20,
+    "overestimated_trials": 0,
+    "exact_trials": 0
+  },
+  "book_id_aliases": {
+    "book_05": {
+      "ground_truth_id": "book_5",
+      "file": "/Users/jimmyli/Desktop/CV_Module2/results/ground_truth/book_5.json"
+    }
+  },
+  "input_sha256": {
+    "/Users/jimmyli/Desktop/CV_Module2/results/measurements.csv": "0f7e8e29c54f70869f786956fdc5c851943aa374216c9aa31611883722021f6e",
+    "/Users/jimmyli/Desktop/CV_Module2/results/ground_truth/book_01.json": "d4fbe1a75955d6d93e133927e3acc9bd9e281696a3bee09da30306c52f1e4a25",
+    "/Users/jimmyli/Desktop/CV_Module2/results/ground_truth/book_02.json": "1729f862a603c41a978f9b0405e38bbb4c9c64affdda61569904b3ec42563019",
+    "/Users/jimmyli/Desktop/CV_Module2/results/ground_truth/book_03.json": "589977d00e3b3902e531f05be92aab2557f2cacb9f29dde51fd234eb2e42f839",
+    "/Users/jimmyli/Desktop/CV_Module2/results/ground_truth/book_04.json": "b0487eb5fc920ec95b022206c697dc72fb4931b14855a37cba1e083795a3ca02",
+    "/Users/jimmyli/Desktop/CV_Module2/results/ground_truth/book_5.json": "2f2dbd39c480ae5250e7c75656c5136b4f224f691c9b55d76ed33fa46a2f42dd",
+    "/Users/jimmyli/Desktop/CV_Module2/results/measurements/book_01_2p134m.json": "d1e0a12d0fcdb54241f38cf3490fdaf2d9ec6705deeaeb7494b09d5bd464ae43",
+    "/Users/jimmyli/Desktop/CV_Module2/results/measurements/book_02_2p134m.json": "8ff8de99118b11938d05092c73a5029704e56f456b5115a4d182f56418c20768",
+    "/Users/jimmyli/Desktop/CV_Module2/results/measurements/book_03_2p134m.json": "b6ec79dea3237350affa10b65691afbff5837939e9c75ff1453c73056bd4ff59",
+    "/Users/jimmyli/Desktop/CV_Module2/results/measurements/book_04_2p134m.json": "43c205ffc382d2b73ff9ce91a0ce2f66ed5b84cb3541014138092739b3ca2b19",
+    "/Users/jimmyli/Desktop/CV_Module2/results/measurements/book_05_2p134m.json": "d3f7f522ca8b6c1c690bea516f77b4c9ecd67e8d47067302f4b2df2f09682fec",
+    "/Users/jimmyli/Desktop/CV_Module2/results/measurements/book_01_2p591m.json": "a275b46e76d56f181569242f1b85ace883c6859ab77039b633e7cc54a4f142ba",
+    "/Users/jimmyli/Desktop/CV_Module2/results/measurements/book_02_2p591m.json": "de87badab55f9857a273ce24e802db1cff107fbc7cf993e31c48c821fa33afa4",
+    "/Users/jimmyli/Desktop/CV_Module2/results/measurements/book_03_2p591m.json": "e75609f27c2316607c69f8c7e1cd50e7471cd7f30d101d9f802cad8739eb1fac",
+    "/Users/jimmyli/Desktop/CV_Module2/results/measurements/book_04_2p591m.json": "6227c9715fbed9059f140572c98f3275cd23dc127358342a96c8fd5c739a1d50",
+    "/Users/jimmyli/Desktop/CV_Module2/results/measurements/book_05_2p591m.json": "108f97c754368f9d09279db28b9f8df78d746924cbc0e9aefc48a0174fe7e8c9",
+    "/Users/jimmyli/Desktop/CV_Module2/results/measurements/book_01_3p048m.json": "f6ca7d22ea47a016df68bcc30456b7e69ee6b2c4e185963f85bf5ae61487bd67",
+    "/Users/jimmyli/Desktop/CV_Module2/results/measurements/book_02_3p048m.json": "ad3cd7296bd77311cfd363c243c4197684c47d948b9839a03315b10a8dd20327",
+    "/Users/jimmyli/Desktop/CV_Module2/results/measurements/book_03_3p048m.json": "c87151d8546018405e56c018b172c865a9d64db3ef8fc46f0122a8eb36d01e5a",
+    "/Users/jimmyli/Desktop/CV_Module2/results/measurements/book_04_3p048m.json": "0514497397ab19bd8748d3e7b736faa65fbb9f7883649329cc84991c8ce0d82c",
+    "/Users/jimmyli/Desktop/CV_Module2/results/measurements/book_05_3p048m.json": "5f90f8b3d739c941c90899e83a9c88abc19b14a97f4a469f0d706708c8086263",
+    "/Users/jimmyli/Desktop/CV_Module2/results/measurements/book_01_3p658m.json": "85ba18d386a96688bf045430bd4b52d552bc41806eeb7cbe21882f261220745f",
+    "/Users/jimmyli/Desktop/CV_Module2/results/measurements/book_02_3p658m.json": "91ff826922c78c206256aac7b110b734a40ffd7853061dfa87e7a9b433b2fcde",
+    "/Users/jimmyli/Desktop/CV_Module2/results/measurements/book_03_3p658m.json": "92899b7af79afb21aec6fb8a703bd153df50b4ed7751a854e4a3d3db80c0358a",
+    "/Users/jimmyli/Desktop/CV_Module2/results/measurements/book_04_3p658m.json": "7bea6e4e1bed6b6653edff2e3c30760368d3b3b1bbf30cdaf3262db1d89b71b8",
+    "/Users/jimmyli/Desktop/CV_Module2/results/measurements/book_05_3p658m.json": "e4d69b59bca58244cef737d66f1ead5e42e036bbcd13f10fc4167164bfb51d50"
+  }
+}

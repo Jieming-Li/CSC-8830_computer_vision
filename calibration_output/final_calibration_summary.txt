@@ -1,0 +1,43 @@
+FINAL CAMERA CALIBRATION SUMMARY
+
+Final archive: calibration_output/calibration.npz
+Installed from: calibration_output/calibration_B_fix_k3.npz
+
+Final model: subset B
+Calibration images: 9
+Excluded accepted image: IMG_9050.jpeg
+Checkerboard: 8 × 8 squares / 7 × 7 internal corners
+Square size: 20.06 mm
+World-coordinate unit: millimeters
+OpenCV calibration flags: CALIB_FIX_K3
+Final RMS reprojection error: 2.987538 pixels
+
+Camera intrinsics:
+fx = 3023.701 pixels
+fy = 3064.832 pixels
+cx = 1491.145 pixels
+cy = 1923.973 pixels
+
+Distortion coefficients:
+k1 = 0.383219
+k2 = -0.879495
+p1 = -0.021663
+p2 = -0.007176
+k3 = 0 by constraint
+
+Values above are rounded for readability; the archive retains full precision.
+
+Included image filenames:
+  IMG_9051.jpeg
+  IMG_9052.jpeg
+  IMG_9053.jpeg
+  IMG_9054.jpeg
+  IMG_9055.jpeg
+  IMG_9058.jpeg
+  IMG_9059.jpeg
+  IMG_9060.jpeg
+  IMG_9062.jpeg
+
+Installation copied the existing candidate archive without recalibration.
+No corner detection or calibration was run. The source candidate is unchanged.
+Installed archive SHA-256: b49b50fac7b0472c3840871f0f444f6f125817177d31614ccefad9324bca9281
