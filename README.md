@@ -3,13 +3,7 @@
 Local Streamlit application for the completed Computer Vision assignment.
 Requires Python 3.10 or newer and the existing project files.
 
-## Run locally on macOS
-
-Open the project directory:
-
-```bash
-cd /Users/jimmyli/Desktop/CV_Module2
-```
+## Run locally
 
 Create the virtual environment once, if it does not already exist:
 
