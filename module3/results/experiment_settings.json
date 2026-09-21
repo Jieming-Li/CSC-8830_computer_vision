@@ -1,0 +1,104 @@
+{
+  "run_utc": "2026-09-21T22:08:52.474390+00:00",
+  "final_photographs_available": true,
+  "status": "final photo inputs",
+  "expected_comparisons": 18,
+  "kernel_sizes": [
+    3,
+    7,
+    15
+  ],
+  "filter_types": [
+    "box",
+    "gaussian"
+  ],
+  "gaussian_sigma_rule": "kernel_size / 6",
+  "max_dimension": 512,
+  "dtype": "float64",
+  "rtol": 1e-10,
+  "atol": 1e-12,
+  "agreement_rule": "abs(Fourier - spatial) <= atol + rtol * abs(spatial), at every pixel",
+  "boundary": "zero padding",
+  "output_mode": "same, centered",
+  "fft_shape_rule": "(H + Kh - 1, W + Kw - 1)",
+  "kernel_fft_convention": "ordinary unshifted discrete kernel",
+  "crop_start": "((Kh - 1) // 2, (Kw - 1) // 2)",
+  "image_display_range": [
+    0,
+    1
+  ],
+  "difference_display": "linear auto scale per panel, labeled; numerical noise is amplified",
+  "unused_photo_candidates": [],
+  "software": {
+    "Python": "3.10.2",
+    "numpy": "2.2.6",
+    "scipy": "1.15.3",
+    "Pillow": "12.3.0",
+    "matplotlib": "3.10.9",
+    "streamlit": "1.64.0"
+  },
+  "inputs": [
+    {
+      "filename": "photo_01.jpg",
+      "kind": "photograph",
+      "sha256": "7644d36ccfcfcbbf1fd498d42c976ab64f37decec093300b9b078237322d5dda",
+      "original_width": 1224,
+      "original_height": 1479,
+      "processed_width": 424,
+      "processed_height": 512,
+      "resized": true,
+      "max_dimension": 512,
+      "dtype": "float64",
+      "range": [
+        0.0,
+        1.0
+      ],
+      "orientation": "Pillow ImageOps.exif_transpose",
+      "grayscale_conversion": "Pillow L luminance / 255",
+      "resize_filter": "LANCZOS"
+    },
+    {
+      "filename": "photo_02.jpg",
+      "kind": "photograph",
+      "sha256": "b44b07cbe3e6fd2ceae993a6bf1153d8962e30e62f69dfd324afe316e844f646",
+      "original_width": 1079,
+      "original_height": 1078,
+      "processed_width": 512,
+      "processed_height": 512,
+      "resized": true,
+      "max_dimension": 512,
+      "dtype": "float64",
+      "range": [
+        0.0,
+        1.0
+      ],
+      "orientation": "Pillow ImageOps.exif_transpose",
+      "grayscale_conversion": "Pillow L luminance / 255",
+      "resize_filter": "LANCZOS"
+    },
+    {
+      "filename": "checkerboard.png",
+      "kind": "generated checkerboard",
+      "sha256": "db27d83cbe0047064226aef90801264929e660332975bdcbfe182bdf71df07ea",
+      "original_width": 512,
+      "original_height": 384,
+      "processed_width": 512,
+      "processed_height": 384,
+      "resized": false,
+      "max_dimension": 512,
+      "dtype": "float64",
+      "range": [
+        0.0,
+        1.0
+      ],
+      "orientation": "Pillow ImageOps.exif_transpose",
+      "grayscale_conversion": "Pillow L luminance / 255",
+      "resize_filter": "LANCZOS"
+    }
+  ],
+  "completed_comparisons": 18,
+  "agreeing_comparisons": 18,
+  "largest_max_absolute_difference": 5.88418203051333e-15,
+  "largest_mean_absolute_difference": 7.975603014502508e-16,
+  "largest_rmse": 1.1547062105204171e-15
+}

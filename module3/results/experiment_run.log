@@ -1,0 +1,26 @@
+01/18 synthetic_edges.png box 3: max difference=1.110e-15, agrees=True
+02/18 synthetic_edges.png box 7: max difference=1.665e-15, agrees=True
+03/18 synthetic_edges.png box 15: max difference=4.663e-15, agrees=True
+04/18 synthetic_edges.png gaussian 3: max difference=1.221e-15, agrees=True
+05/18 synthetic_edges.png gaussian 7: max difference=1.221e-15, agrees=True
+06/18 synthetic_edges.png gaussian 15: max difference=2.442e-15, agrees=True
+07/18 synthetic_texture.png box 3: max difference=1.110e-15, agrees=True
+08/18 synthetic_texture.png box 7: max difference=1.110e-15, agrees=True
+09/18 synthetic_texture.png box 15: max difference=1.332e-15, agrees=True
+10/18 synthetic_texture.png gaussian 3: max difference=1.110e-15, agrees=True
+11/18 synthetic_texture.png gaussian 7: max difference=1.110e-15, agrees=True
+12/18 synthetic_texture.png gaussian 15: max difference=1.554e-15, agrees=True
+13/18 checkerboard.png box 3: max difference=1.665e-15, agrees=True
+14/18 checkerboard.png box 7: max difference=1.443e-15, agrees=True
+15/18 checkerboard.png box 15: max difference=2.665e-15, agrees=True
+16/18 checkerboard.png gaussian 3: max difference=1.776e-15, agrees=True
+17/18 checkerboard.png gaussian 7: max difference=1.110e-15, agrees=True
+18/18 checkerboard.png gaussian 15: max difference=2.887e-15, agrees=True
+
+Status: provisional: missing photographs
+Completed: 18/18 comparisons
+Agreed: 18/18; rtol=1e-10, atol=1e-12
+Largest maximum absolute difference: 4.6629367034256575e-15
+Largest MAE: 7.9756030145025079e-16
+Largest RMSE: 1.2712795338700996e-15
+Add two real photographs, e.g. images/photo_01.jpg and images/photo_02.jpg, then run python run_experiments.py --photos photo_01.jpg photo_02.jpg.

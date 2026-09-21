@@ -1,0 +1,20 @@
+# Local environments, Python/test caches, and development artifacts
+.venv/
+venv/
+env/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.cache/
+.coverage
+htmlcov/
+.DS_Store
+# Credentials and local secrets
+.env
+.env.*
+!.env.example
+.streamlit/secrets.toml
+secrets.*
+*.pem
+*.key
+# Keep bundled images, reports, CSV/JSON, and comparison panels tracked.

@@ -1,6 +1,5 @@
-opencv-python-headless
-numpy
-matplotlib
-streamlit>=1.50,<2
-streamlit-image-coordinates>=0.4.1,<0.5
-Pillow
+# Combined runtime requirements; modules retain their standalone dependency lists.
+-r module2/requirements.txt
+-r module3/requirements.txt
+# Shared navigation/upload integration checks use the current testing API.
+streamlit>=1.64,<2

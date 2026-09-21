@@ -1,0 +1,5 @@
+Local Streamlit server starts and health endpoint responds.
+Gaussian controls and invalidation on parameter changes verified.
+Bundled example: Box and Gaussian runs, PASS status, JSON/PNG/float64-NPZ downloads verified.
+In-memory synthetic upload, max-512 resizing disclosure, and upload comparison verified.
+Original bundled image hashes and file list unchanged; no uploaded file persisted to images/.

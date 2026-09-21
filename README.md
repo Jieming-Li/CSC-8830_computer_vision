@@ -1,196 +1,142 @@
-# Single-Image Book Dimension Measurement
+# CSC 8830 Computer Vision — Jieming Li
 
-Local Streamlit application for the completed Computer Vision assignment.
-Requires Python 3.10 or newer and the existing project files.
+One Streamlit application serves **Home**, **Module 2**, and **Module 3**. The
+repository-root **`app.py` remains the deployment entry point**. Each assignment
+keeps its implementation and assets in its own directory.
 
 ## Run locally
 
-Create the virtual environment once, if it does not already exist:
+From the `CSC-8830_computer_vision` repository root, with Python 3.10 or newer:
 
 ```bash
 python3 -m venv .venv
-```
-
-Activate the environment, install dependencies, and start the webpage:
-
-```bash
 source .venv/bin/activate
 pip install -r requirements.txt
 streamlit run app.py
 ```
 
-Open the local URL printed by Streamlit, usually `http://localhost:8501`.
-Stop the server with **Ctrl+C**. The application is local; deployment is not needed.
-
-## Measure a book
-
-1. Upload a JPG, JPEG, or PNG from the calibrated rear phone camera. The decoded
-   image must be portrait **3024 × 4032 pixels**. Use the same camera/lens and 1× zoom.
-2. Enter the perpendicular distance from the rear camera lens to the cover plane,
-   in meters. Keep the cover flat and approximately parallel to the camera image plane.
-3. Click exactly four cover corners: **top-left, top-right, bottom-right, bottom-left**.
-   The page numbers each point and lists its original-image pixel coordinates.
-4. Use **Reset Corners** to correct a selection, then press **Calculate**.
-5. Download the annotated PNG and JSON result. These are session downloads;
-   the app does not append to or overwrite the completed assignment measurements.
-
-A new upload clears the selection. Changing distance invalidates the previous
-result; press Calculate again. After four corners, further clicks are ignored.
-An invalid corner order or mismatched image resolution produces an error.
-
-## Measurement implementation
-
-`app.py` imports `load_calibration()` and `measure_at_depth()` directly from
-`measure_book.py`, and `validate_quad()` from `measurement_utils.py`. It uses
-`calibration_output/calibration.npz` as the final calibration. There is no separate
-web measurement formula: `cv2.undistortPoints()` and the constant-depth projection
-are the same code used by the command-line script.
-
-Uploaded bytes are decoded with OpenCV's `IMREAD_GRAYSCALE` and default EXIF
-orientation handling, matching calibration and the CLI. Browser click coordinates
-are scaled back from the displayed image to the original image before measurement.
-The entered distance is treated as camera-space depth Z. Lens-to-cover distance
-approximates this depth; cover tilt or a diagonal distance can introduce error.
-
-The interactive component is
-[`streamlit-image-coordinates`](https://github.com/blackary/streamlit-image-coordinates).
-The app checks each event's timestamp to prevent repeated Streamlit reruns from
-adding duplicate clicks.
-
-## Evaluation Summary
-
-The page reads aggregate values from `results/evaluation_metrics.json` and shows:
-
-| Metric | Value |
-|---|---:|
-| Width MAE | 1.05 cm |
-| Width MAPE | 7.29% |
-| Height MAE | 2.13 cm |
-| Height MAPE | 9.71% |
-
-It displays only these existing evaluation figures:
-
-- `results/figures/predicted_vs_true_width.png`
-- `results/figures/predicted_vs_true_height.png`
-- `results/figures/absolute_error_vs_distance.png`
-
-No reference-photo files, reference annotations, or reference-object details are
-loaded into the webpage. The raw evaluation JSON and internal source paths are
-not displayed. The app does not change calibration or the completed 20-trial data.
-
-## Command-line tools
-
-Run these commands from the project directory with `.venv` activated. The
-calibration and 20-trial evaluation are already complete; starting the webpage
-only requires the setup/run commands above.
-
-### Measure a book from a phone image
+If you already use the existing Module 3 environment, you can instead run:
 
 ```bash
-python3 measure_book.py --image book_measurement_images/book_01_2p134m.jpeg --distance-m 2.134 --id book_01
+source module3/.venv/bin/activate
+pip install -r requirements.txt
+streamlit run app.py
 ```
 
-Replace the image, distance, and book ID for a new trial. Matplotlib asks for
-four book-cover corners in top-left, top-right, bottom-right, bottom-left order.
-Results go to `results/measurements/` and `results/measurements.csv`.
-Rerunning a trial replaces its JSON/annotation and appends another CSV row.
+Use the local URL printed by Streamlit, normally `http://localhost:8501`.
+The sidebar and Home links open both assignments in the same application.
+Stop with **Ctrl+C**; leave the environment with `deactivate`.
 
-### Measure ground truth from a reference photo
+## Pages and behavior
+
+- **Home:** descriptions and links to both assignments.
+- **Module 2** (`/module-2`): existing calibrated book measurement, four-corner
+  selection, camera-to-book distance, evaluation summary, and PNG/JSON downloads.
+  The required decoded image resolution remains 3024 × 4032. Measurement uses
+  the same `module2/measure_book.py` functions and final calibration archive.
+- **Module 3** (`/module-3`): existing Box/Gaussian spatial and Fourier comparison,
+  image upload or bundled examples, numerical metrics, heatmap, and downloads.
+  The same `module3/filtering.py` is shared with the experiment runner.
+
+**Switching pages starts a fresh interactive selection. Download outputs before
+leaving a module.** Widgets/results have separate `module2.` and `module3.` keys.
+Page changes clear previous interactive state, including uploads and click events;
+ordinary reruns on a page preserve its current work. Module 3 calculates only when
+**Run both methods** is pressed. Module 2 calculations still require four corners
+and **Calculate**. Uploaded files and downloadable results stay in session memory.
+
+The shared app does not rerun calibration, batch experiments, or evaluation. It does
+not overwrite completed trials, calibration archives, saved figures, or reports.
+Module 2 reference photos and ground-truth records are not loaded or exposed by
+any webpage.
+
+## Organization
+
+```text
+app.py                         # Stable deployment entry point and navigation
+home.py                        # Assignment descriptions and page links
+requirements.txt               # Includes both modules' dependency lists
+pytest.ini                     # Shared and existing Module 3 test discovery
+tests/test_shared_app.py        # Navigation, measurement regression, state checks
+module2/
+  page.py                      # Thin shared-app adapter
+  app.py                       # Existing measurement UI; also runs standalone
+  measure_book.py               # Shared CLI/web dimension-estimation logic
+  measurement_utils.py         # Existing geometry and image-loading helpers
+  calibration_output/          # Existing final calibration and reports
+  results/                     # Existing completed trials and evaluation figures
+  README.md                    # Module 2 setup and all local CLI commands
+module3/
+  page.py                      # Thin shared-app adapter
+  app.py                       # Existing blur UI; also runs standalone
+  filtering.py                 # Unchanged spatial and FFT implementations
+  image_utils.py               # Existing preprocessing and display helpers
+  run_experiments.py            # Existing batch runner
+  images/                      # Photographs and generated examples
+  results/                     # Existing measured comparisons and figures
+  submission/                  # Existing Word report
+  tests/                       # Existing correctness and standalone UI tests
+  README.md                    # Module 3 setup, experiments, and report workflow
+```
+
+Asset locations resolve from each module's `__file__`, independently of the working
+directory. Package imports keep modules separate. OpenCV uses the headless 4.x
+package for the web server; Module 2's calibration/measurement functions retain
+their existing behavior. No system OpenCV GUI library is required by Streamlit.
+
+## Tests and syntax checks
+
+From the repository root with the environment activated:
 
 ```bash
-python3 measure_ground_truth.py --image reference_images/book_01_reference.jpeg --id book_01
+python -m pytest -q
+python -m py_compile app.py home.py module2/app.py module2/page.py module2/measure_book.py module3/app.py module3/page.py
 ```
 
-Select the four outer reference-rectangle corners, then the four book-cover
-corners, each in top-left, top-right, bottom-right, bottom-left order. Orientation
-is detected automatically for a top-down image. To explicitly use the vertical
-orientation present in this example:
+The test suite includes all existing Module 3 correctness tests, regression checks
+against all 20 saved Module 2 measurements, and shared-page navigation/state tests.
+These checks read completed data without changing it. The shared requirements select Streamlit 1.64 or newer for uploader/page-testing
+support. Each module retains its standalone dependency list.
+
+## Local verification
+
+The combined setup passed **107 tests**, including all 81 existing Module 3 tests
+and regression checks reproducing all 20 saved Module 2 measurements. Browser
+checks covered real four-corner input, measurement/downloads, Box/Gaussian filters,
+uploads, direct module links, and repeated page switching. Syntax checks and
+`pip check` also passed. Hash checks confirmed 167 protected assets/helpers were
+unchanged, including calibration archives, images, completed results, and the
+Module 3 report. No push or deployment was performed.
+
+## Standalone module commands
+
+Both original apps remain available independently:
 
 ```bash
-python3 measure_ground_truth.py --image reference_images/book_01_reference.jpeg --id book_01 --plate-orientation portrait
+streamlit run module2/app.py
+streamlit run module3/app.py
 ```
 
-`--plate-orientation` accepts `auto`, `portrait`, or `landscape`. Use `landscape`
-only when the known long side runs from top-left to top-right. Results go to
-`results/ground_truth/`; rerunning replaces that book's JSON and masked annotation.
-This is a local CLI tool and is not part of the webpage.
-
-### Evaluate the completed 20 trials
+The existing module-specific CLI commands remain documented in
+[Module 2 README](module2/README.md) and [Module 3 README](module3/README.md).
+For example, to deliberately rerun the Module 3 experiments later:
 
 ```bash
-python3 evaluate_results.py
+python module3/run_experiments.py --photos photo_01.jpg photo_02.jpg
 ```
 
-Reads the saved measurements and ground truth, checks all 20 trials, and writes
-`results/final_trial_results.csv`, `results/evaluation_summary.txt`,
-`results/evaluation_metrics.json`, and the three figures under `results/figures/`.
-It does not change measurements. Missing fields, conflicting records, or a CSV
-with other than 20 trial rows cause a clear error.
+That command replaces Module 3 experiment outputs; it is unnecessary for launching
+or testing the shared webpage.
 
-The equivalent command with explicit input and output directories is:
+## Existing deployment
 
-```bash
-python3 evaluate_results.py --results-dir results --output-dir results
-```
+No push or deployment is performed by this change. When publication is separately
+authorized, keep the existing Streamlit app, repository/branch, and main-file path
+**`app.py`**. Include the root files, both module folders, and the existing assets
+used by their pages. Install the root `requirements.txt`. The same deployment can
+then serve Home and both module routes under its existing base URL; a second
+Streamlit app is unnecessary.
 
-### Calibration diagnostics and rebuilding (optional)
-
-These steps are already complete. Use them when investigating or rebuilding
-calibration; they are not required to run the webpage.
-
-Test detection on one image without recalibrating:
-
-```bash
-python3 calibrate_camera.py --single-image IMG_9050.jpeg
-```
-
-Compare candidate corner patterns on the diagnostic image:
-
-```bash
-python3 diagnose_checkerboard.py
-```
-
-Run detection and calibration on the calibration-image folder:
-
-```bash
-python3 calibrate_camera.py
-```
-
-A successful full run replaces `calibration_output/calibration.npz` with that
-run's calibration. The selected final model for this assignment is the existing
-**subset B / FIX_K3** candidate. To install or restore that saved final candidate:
-
-```bash
-cp calibration_output/calibration_B_fix_k3.npz calibration_output/calibration.npz
-```
-
-This copies the existing candidate; it does not recalibrate or modify the source
-candidate. The calibration comparison reports and candidate archives are already
-saved under `calibration_output/`.
-
-### Syntax checks
-
-```bash
-python3 -m py_compile app.py calibrate_camera.py diagnose_checkerboard.py measure_book.py measure_ground_truth.py measurement_utils.py evaluate_results.py
-```
-
-### Command help
-
-```bash
-python3 calibrate_camera.py --help
-python3 measure_book.py --help
-python3 measure_ground_truth.py --help
-python3 evaluate_results.py --help
-streamlit run --help
-```
-
-`diagnose_checkerboard.py` runs directly and has no command-line options.
-
-### Stop and exit
-
-Press **Ctrl+C** in the terminal running Streamlit to stop the webpage. To leave
-the virtual environment afterward:
-
-```bash
-deactivate
-```
+Navigation uses Streamlit's [st.navigation](https://docs.streamlit.io/develop/api-reference/navigation/st.navigation).
+The explicit page-reset behavior accounts for Streamlit's
+[inactive-widget cleanup](https://docs.streamlit.io/develop/concepts/multipage-apps/widgets).

@@ -2,3 +2,9 @@ __pycache__/
 .DS_Store
 venv/
 .env
+# Shared-app local environments and verification artifacts
+.venv/
+.cache/
+.pytest_cache/
+*.py[cod]
+.streamlit/secrets.toml

@@ -28,9 +28,15 @@ import sys
 import cv2
 import numpy as np
 
-from measurement_utils import (BASE_DIR, annotated_figure, edge_dimensions,
-                               load_gray, pyplot_interactive, save_json,
-                               select_corners, validate_id)
+# Support both package imports from the shared app and direct CLI execution.
+if __package__:
+    from .measurement_utils import (BASE_DIR, annotated_figure, edge_dimensions,
+                                    load_gray, pyplot_interactive, save_json,
+                                    select_corners, validate_id)
+else:
+    from measurement_utils import (BASE_DIR, annotated_figure, edge_dimensions,
+                                   load_gray, pyplot_interactive, save_json,
+                                   select_corners, validate_id)
 
 CALIBRATION_PATH = BASE_DIR / 'calibration_output' / 'calibration.npz'
 
